@@ -1,42 +1,39 @@
 /*------------------------------------*\
   #FONTS
 \*------------------------------------*/
-
 @font-face {
     font-family: "HK Grotesk Web";
     font-weight: 200;
-    src: url("../fonts/fonts/hkgrotesk-light-webfont.woff2"),
-    url("../fonts/fonts/hkgrotesk-light-webfont.woff");
+    src: url('../fonts/hkgrotesk-light-webfont.woff2') format("woff2"),
+        url('../fonts/hkgrotesk-light-webfont.woff') format("woff");
 }
 
 @font-face {
     font-family: "HK Grotesk Web";
     font-weight: 400;
-    src: url("../fonts/fonts/hkgrotesk-regular-webfont.woff2"),
-    url("../fonts/fonts/hkgrotesk-regular-webfont.woff");
+    src: url('../fonts/hkgrotesk-regular-webfont.woff2') format("woff2"),
+        url('../fonts/hkgrotesk-regular-webfont.woff') format("woff");
 }
 
 @font-face {
     font-family: "HK Grotesk Web";
     font-weight: 600;
-    src: url("../fonts/fonts/hkgrotesk-medium-webfont.woff2"),
-    url("../fonts/fonts/hkgrotesk-medium-webfont.woff");
+    src: url('../fonts/hkgrotesk-medium-webfont.woff2') format("woff2"),
+        url('../fonts/hkgrotesk-medium-webfont.woff') format("woff");
 }
 
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
-
 /*
     Generic: Page
     ---
     Global page styles + universal box-sizing:
 */
-
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family:"HK Grotesk Web", Helvetica, arial, sans-serif;
+    font-family: "HK Grotesk Web", Helvetica, arial, sans-serif;
     color: #202024;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -44,8 +41,8 @@ html {
 }
 
 @media (min-width: 768px) {
-    html{
-        font-style: 20px;
+    html {
+        font-size: 20px;
         line-height: 1.6;
     }
 }
@@ -62,9 +59,8 @@ html {
  *
  * Customize the background color to match your design.
  */
-
 ::selection {
-    background: #5051DB;
+    background: #5bbad5;
     color: white;
     text-shadow: none;
 }
@@ -72,13 +68,11 @@ html {
 /*------------------------------------*\
   #Elements
 \*------------------------------------*/
-
 /*
     Elements: Images
     ---
     Default markup for images to make them responsive
 */
-
 img {
     max-width: 100%;
     vertical-align: top;
@@ -89,8 +83,7 @@ img {
     ---
     Default markup for typographic elements
 */
-
-h1,h2,h3 {
+h1, h2, h3 {
     font-weight: 200;
 }
 
@@ -179,57 +172,17 @@ a:active {
 
 a:hover,
 a:focus {
-    color: #3E3EA8;
+    color: Crimson;
 }
 
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
-
-/*
-    Objects: section
-    ---
-    Creates vertical whitespace between adjacent sections inside a row
-*/
-
-.o-section {
-}
-
-.o-section + .o-section {
-    margin-top: 24px;
-}
-
-@media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
-        margin-top: 48px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .o-section--xl + .o-section--xl {
-        margin-top: 72px;
-    }
-}
-
-
-/*
-    Objects: List
-    ---
-    Small reusable object to remove default list styling from lists
-*/
-
-.o-list {
-    list-style: none;
-    padding: 0;
-}
-
 /*
     Objects: Row
     ---
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
-
 .o-row {
     position: relative;
     padding: 24px 24px 0;
@@ -238,9 +191,13 @@ a:focus {
 }
 
 /* size modifiers */
-
 .o-row--lg {
     padding: 48px 24px 24px;
+}
+
+/*Color*/
+.o-row--neutral-x-light {
+    background-color: #F8F7FC;
 }
 
 @media (min-width: 768px) {
@@ -265,12 +222,12 @@ a:focus {
     ---
     Creates a horizontal container that sets de global max-width
 */
-
 .o-container {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 56.4em; /* 90 * 16px = 1440px --> 1128/20 px = 56.4 em*/
+    max-width: 56.4em;
+    /* 90 * 16px = 1440px */
 }
 
 /*
@@ -280,7 +237,6 @@ a:focus {
     contains the basic structural elements, but classes should be complemented
     with width utilities
 */
-
 .o-layout {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -288,17 +244,16 @@ a:focus {
     flex-wrap: wrap;
 }
 
-    .o-layout__item {
-        width: 100%;
-    }
+.o-layout__item {
+    width: 100%;
+}
 
 /* gutter modifiers, these affect o-layout__item too */
-
 .o-layout--gutter {
     margin: 0 -12px;
 }
 
-.o-layout--gutter > .o-layout__item {
+.o-layout--gutter>.o-layout__item {
     padding: 0 12px;
 }
 
@@ -306,7 +261,7 @@ a:focus {
     margin: 0 -6px;
 }
 
-.o-layout--gutter-sm > .o-layout__item {
+.o-layout--gutter-sm>.o-layout__item {
     padding: 0 6px;
 }
 
@@ -314,18 +269,16 @@ a:focus {
     margin: 0 -24px;
 }
 
-.o-layout--gutter-lg > .o-layout__item {
+.o-layout--gutter-lg>.o-layout__item {
     padding: 0 24px;
 }
 
 /* reverse horizontal row modifier */
-
 .o-layout--row-reverse {
     flex-direction: row-reverse;
 }
 
 /* Horizontal alignment modifiers*/
-
 .o-layout--justify-start {
     justify-content: flex-start;
 }
@@ -351,7 +304,6 @@ a:focus {
 }
 
 /* Vertical alignment modifiers */
-
 .o-layout--align-start {
     align-items: flex-start;
 }
@@ -369,7 +321,6 @@ a:focus {
 }
 
 /* Vertical alignment modifiers that only work if there is one than one flex item */
-
 .o-layout--align-content-start {
     align-content: start;
 }
@@ -390,39 +341,52 @@ a:focus {
     align-content: space-between;
 }
 
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+.o-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.o-section+.o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+
+    .o-section--lg+.o-section--lg,
+    .o-section--xl+.o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl+.o-section--xl {
+        margin-top: 72px;
+    }
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
-
-/*
-    Component: header
-    ---
-    Main header of the website
-*/
-
-.c-header__nav {
-    display: none;
-}
-
-@media (min-width: 992px) {
-    .c-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .c-header__nav {
-        display: block;
-    }
-}
-
-
 /*
     Component: Logo
     ---
     Website main logo
 */
-
 .c-logo {
     height: 32px;
 }
@@ -442,13 +406,9 @@ a:focus {
     ---
     Main navigation of the site
 */
-
 .c-nav {
     font-size: 18px;
     line-height: 24px;
-}
-.c-nav--meta{
-    font-size: 16px;
 }
 
 .c-nav__link {
@@ -466,14 +426,14 @@ a:focus {
 
 .c-nav__link--meta,
 .c-nav__link--meta:visited,
-.c-nav__link--meta:active{
+.c-nav__link--meta:active {
     color: #6C6C75;
 }
 
 .is-selected .c-nav__link,
 .c-nav__link:hover,
 .c-nav__link:focus {
-    color: #5051DB;
+    color: #5051db;
 }
 
 @media (min-width: 768px) {
@@ -488,26 +448,108 @@ a:focus {
     }
 }
 
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+.c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .c-header__nav {
+        display: block;
+    }
+}
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+.c-lead {
+    font-weight: 200;
+}
+
+.c-lead--lg {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.c-lead--xl {
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.c-lead--xxl {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.c-lead--xxxl {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+@media (min-width: 768px) {
+    .c-lead--lg {
+        font-size: 23px;
+        line-height: 32px;
+    }
+
+    .c-lead--xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .c-lead--xxl {
+        font-size: 41px;
+        line-height: 48px;
+    }
+
+    .c-lead--xxxl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-lead--lg {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .c-lead--xl {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .c-lead--xxl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+
+    .c-lead--xxxl {
+        font-size: 66px;
+        line-height: 72px;
+    }
+}
+
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
-
-/*
-    Utilities: spacing
-    ---
-    Utility classes to put specific margins and paddings onto elements
-*/
-
-.u-pt-clear {
-    padding-top: 0 !important;
-}
-
 /*
     Utilities: max-width
     ---
     Utility classes to put specific max widths onto elements
 */
-
 .u-max-width-xs {
     max-width: 18em !important;
 }
@@ -538,7 +580,6 @@ a:focus {
     Utility classes to put specific widths onto elements
     Will be mostly used on o-layout__item
 */
-
 .u-width-auto {
     width: auto !important;
 }
@@ -591,33 +632,43 @@ a:focus {
     .u-1-of-2-bp1 {
         width: 50% !important;
     }
+
     .u-1-of-3-bp1 {
         width: 33.3333333333% !important;
     }
+
     .u-2-of-3-bp1 {
         width: 66.6666666667% !important;
     }
+
     .u-1-of-4-bp1 {
         width: 25% !important;
     }
+
     .u-3-of-4-bp1 {
         width: 75% !important;
     }
+
     .u-1-of-5-bp1 {
         width: 20% !important;
     }
+
     .u-2-of-5-bp1 {
         width: 40% !important;
     }
+
     .u-3-of-5-bp1 {
         width: 60% !important;
     }
+
     .u-4-of-5-bp1 {
         width: 80% !important;
     }
+
     .u-1-of-6-bp1 {
         width: 16.6666666667% !important;
     }
+
     .u-5-of-6-bp1 {
         width: 83.3333333333% !important;
     }
@@ -627,33 +678,43 @@ a:focus {
     .u-1-of-2-bp2 {
         width: 50% !important;
     }
+
     .u-1-of-3-bp2 {
         width: 33.3333333333% !important;
     }
+
     .u-2-of-3-bp2 {
         width: 66.6666666667% !important;
     }
+
     .u-1-of-4-bp2 {
         width: 25% !important;
     }
+
     .u-3-of-4-bp2 {
         width: 75% !important;
     }
+
     .u-1-of-5-bp2 {
         width: 20% !important;
     }
+
     .u-2-of-5-bp2 {
         width: 40% !important;
     }
+
     .u-3-of-5-bp2 {
         width: 60% !important;
     }
+
     .u-4-of-5-bp2 {
         width: 80% !important;
     }
+
     .u-1-of-6-bp2 {
         width: 16.6666666667% !important;
     }
+
     .u-5-of-6-bp2 {
         width: 83.3333333333% !important;
     }
@@ -663,33 +724,43 @@ a:focus {
     .u-1-of-2-bp3 {
         width: 50% !important;
     }
+
     .u-1-of-3-bp3 {
         width: 33.3333333333% !important;
     }
+
     .u-2-of-3-bp3 {
         width: 66.6666666667% !important;
     }
+
     .u-1-of-4-bp3 {
         width: 25% !important;
     }
+
     .u-3-of-4-bp3 {
         width: 75% !important;
     }
+
     .u-1-of-5-bp3 {
         width: 20% !important;
     }
+
     .u-2-of-5-bp3 {
         width: 40% !important;
     }
+
     .u-3-of-5-bp3 {
         width: 60% !important;
     }
+
     .u-4-of-5-bp3 {
         width: 80% !important;
     }
+
     .u-1-of-6-bp3 {
         width: 16.6666666667% !important;
     }
+
     .u-5-of-6-bp3 {
         width: 83.3333333333% !important;
     }
@@ -699,42 +770,77 @@ a:focus {
     .u-1-of-2-bp4 {
         width: 50% !important;
     }
+
     .u-1-of-3-bp4 {
         width: 33.3333333333% !important;
     }
+
     .u-2-of-3-bp4 {
         width: 66.6666666667% !important;
     }
+
     .u-1-of-4-bp4 {
         width: 25% !important;
     }
+
     .u-3-of-4-bp4 {
         width: 75% !important;
     }
+
     .u-1-of-5-bp4 {
         width: 20% !important;
     }
+
     .u-2-of-5-bp4 {
         width: 40% !important;
     }
+
     .u-3-of-5-bp4 {
         width: 60% !important;
     }
+
     .u-4-of-5-bp4 {
         width: 80% !important;
     }
+
     .u-1-of-6-bp4 {
         width: 16.6666666667% !important;
     }
+
     .u-5-of-6-bp4 {
         width: 83.3333333333% !important;
     }
 }
 
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+.u-color-primary-light {
+    color: #7373F5 !important;
+}
+
+.u-color-primary-base {
+    color: #5051DB !important;
+}
+
+.u-color-primary-dark {
+    color: #3E3EA8 !important;
+}
+
 /*------------------------------------*\
   #MEDIA
 \*------------------------------------*/
-
 /*
     Media Queries
     ---
@@ -742,35 +848,29 @@ a:focus {
     These examples override the primary ('mobile first') styles.
     USE THEM INLINE!
 */
-
 /* Extra small devices (portrait phones, less than 576px)
    No media query since this is the default in mobile first design
 */
-
 /* Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 */
-
 /* Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {}
 */
-
 /* Large devices (landscape tablets, desktops, 992px and up)
 @media (min-width: 992px) {}
 */
-
 /* Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
 */
-
 /*
     Print styles.
     ---
     Inlined to avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
-
 @media print {
+
     *,
     *:before,
     *:after {
@@ -781,16 +881,20 @@ a:focus {
         box-shadow: none !important;
         text-shadow: none !important;
     }
+
     a,
     a:visited {
         text-decoration: underline;
     }
+
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: " ("attr(href) ")";
     }
+
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: " ("attr(title) ")";
     }
+
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
@@ -799,14 +903,17 @@ a:focus {
     a[href^="javascript:"]:after {
         content: "";
     }
+
     pre {
         white-space: pre-wrap !important;
     }
+
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
+
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
@@ -814,16 +921,19 @@ a:focus {
     thead {
         display: table-header-group;
     }
+
     tr,
     img {
         page-break-inside: avoid;
     }
+
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
+
     h2,
     h3 {
         page-break-after: avoid;
